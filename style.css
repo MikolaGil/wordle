@@ -110,13 +110,45 @@
   }
 
   .tile[data-state="correct"]{
+    border: none;
     background-color: hsl(115, 29%, 43%);
   }
 
+  .tile.shake{
+    animation: shake 250ms ease-in-out;
+  }
+  .tile.flip{
+    transform: rotateX(90deg);
+  }
+
+  @keyframes shake {
+    10% {
+      transform: translate(-10%);
+    }
+
+    30% {
+      transform: translate(10%);
+    }
+
+    50% {
+      transform: translate(-15%);
+    }
+
+    70% {
+      transform: translate(15%);
+    }
+
+    90% {
+      transform: translate(5%);
+    }
+    100% {
+      transform: translate(0);
+    }
+  }
 .alert-container{
     position: fixed;
     top:10vh;
-    left: 50vh;
+    left: 50vw;
     transform: translate(-50%);
     z-index: 1;
     display: flex;
@@ -126,6 +158,18 @@
 
   .alert{
     pointer-events: none;
-    background-color: HSL(204, 7%, 85%);
+    background-color: hsl(204, 7%, 85%);
     padding: .75em;
+    border-radius: 0.25em;
+    opacity: 1;
+    transition: opacity 500ms ease-in-out;
+    margin-bottom: 0.5rem;
+  }
+
+  .alert:last-child{
+    margin-bottom: 0;
+  }
+
+  .alert.hide{
+    opacity: 0;
   }
