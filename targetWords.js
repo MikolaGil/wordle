@@ -1,4 +1,4 @@
-[
+export const targetWords = [
     "cigar",
     "rebut",
     "sissy",
@@ -2314,4 +2314,4 @@
     "artsy",
     "rural",
     "shave"
-  ]
+  ];
